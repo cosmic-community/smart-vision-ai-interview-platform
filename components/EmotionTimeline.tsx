@@ -61,13 +61,13 @@ export default function EmotionTimeline({ timeline }: EmotionTimelineProps) {
             key={index}
             className="bg-secondary-50 rounded-lg p-3 text-center"
           >
-            <div className="text-3xl mb-1">{getEmotionEmoji(point.emotion)}</div>
+            <div className="text-3xl mb-1">{getEmotionEmoji(point.emotion ?? 'neutral')}</div>
             <div className="text-xs text-secondary-600 mb-1">{point.time}</div>
             <div className="text-sm font-semibold text-secondary-900 capitalize">
-              {point.emotion}
+              {point.emotion ?? 'neutral'}
             </div>
             <div className="text-xs text-primary-600 font-medium">
-              {point.confidence}% confidence
+              {point.confidence ?? 0}% confidence
             </div>
           </div>
         ))}
